@@ -1,0 +1,33 @@
+body {
+  background-color: black;
+}
+
+.container {
+  height: 500px;
+  width: 500px;
+  background-color: grey;
+  margin: 0 auto;
+}
+.title {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin: 50px auto;
+}
+.user-move {
+  height: 120px;
+  width: 120px;
+  background-color: rgb(128, 64, 0);
+  border-radius: 80px;
+  margin: 50px 20px;
+  cursor: pointer;
+}
+.user-move:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+.result{
+  height: 200px;
+  background-color: green;
+}
