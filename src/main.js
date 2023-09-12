@@ -42,6 +42,6 @@ function judgeGame(playerMove, computerMove) {
   }else if (playerMove === 'scissors' && computerMove === 'scissors'){
     result = 'Tie!';
   }
-  // console.log(result)
+  
   document.querySelector('.result').innerHTML = `playerMove => ${playerMove};<br> computerMove => ${computerMove}; <br> Player ${result}`;
 }
