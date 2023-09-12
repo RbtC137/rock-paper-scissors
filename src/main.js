@@ -1,6 +1,9 @@
 let playerMove = '';
 let computerMove = '';
 
+//
+const moves = ['rock', 'paper', 'scissors'];
+
 let moveButtons = document.querySelectorAll('.player-move');
 moveButtons.forEach((buttonElement) =>{ 
   buttonElement.addEventListener('click',() => {
@@ -23,24 +26,13 @@ function computerMoveRand() {
 
 function judgeGame(playerMove, computerMove) {
   let result = '';
-  if (playerMove === 'rock' && computerMove === 'rock'){
+  let score = moves.indexOf(playerMove) - moves.indexOf(computerMove);
+  if (score === 0){
     result = 'Tie!';
-  }else if (playerMove === 'rock' && computerMove === 'paper'){
-    result = 'Lose!';
-  }else if (playerMove === 'rock' && computerMove === 'scissors'){
-    result = 'Lose!';
-  }else if (playerMove === 'paper' && computerMove === 'rock'){
+  } else if (score === 1 || score === -2){
     result = 'Win!';
-  }else if (playerMove === 'paper' && computerMove === 'paper'){
-    result = 'Tie!';
-  }else if (playerMove === 'paper' && computerMove === 'scissors'){
+  } else {
     result = 'Lose!';
-  }else if (playerMove === 'scissors' && computerMove === 'rock'){
-    result = 'Lose!';
-  }else if (playerMove === 'scissors' && computerMove === 'paper'){
-    result = 'Win!';
-  }else if (playerMove === 'scissors' && computerMove === 'scissors'){
-    result = 'Tie!';
   }
   
   document.querySelector('.result').innerHTML = `playerMove => ${playerMove};<br> computerMove => ${computerMove}; <br> Player ${result}`;
